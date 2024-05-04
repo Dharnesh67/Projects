@@ -1,0 +1,109 @@
+.navbar {
+    background-color: var(--dlgreen);
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-start;
+    margin-left: 30px;
+    color: var(--llgreen);
+}
+
+.right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.right>ul {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+}
+
+.menu_item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+
+    &::after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 0;
+        background: transparent;
+        transition: all 0.4s ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+        background-color: var(--llgreen);
+    }
+}
+
+.menu_link {
+    text-decoration: none;
+    color: var(--llgreen);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.navicon {
+    display: none;
+    cursor: pointer;
+    color: var(--llgreen);
+    // margin-bottom: 1px;
+    z-index: 1000;
+}
+
+.navbar_logo {
+    color: var(--llgreen);
+}
+
+@media only screen and (max-width: 760px) {
+    .navicon {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // border: 1px solid rgb(112, 229, 255);
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 700px;
+        position: absolute;
+        left: -110%;
+        // z-index: ;
+        opacity:   1;
+        transition: all 0.3s ease-in-out;
+        font-size: 1.5em;
+        &.active{
+            left: 0px;
+            // margin-top: 0px;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--dlgreen);
+            height: 80vh;
+        }
+        
+    }
+    .menu_item{
+        border-bottom: .5px solid var(--lgreen);
+    }
+
+    // .right{
+    //     flex-direction: column;
+    // }
+}
