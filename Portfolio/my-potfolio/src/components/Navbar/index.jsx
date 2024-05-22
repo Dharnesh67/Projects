@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { FaBars, FaReact } from 'react-icons/fa';
 import { HiX } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { ImHome } from "react-icons/im";
 import './style.scss';
 const data = [
   {
@@ -14,6 +15,7 @@ const data = [
     id: 2,
     title: "About",
     path: "/about"
+    
   },
   {
     id: 3,
@@ -22,8 +24,8 @@ const data = [
   },
   {
     id: 4,
-    title: "Resume",
-    path: "/resume"
+    title: "Education/Exprerience",
+    path: "/Education_experience"
   },
   {
     id: 5,
@@ -40,7 +42,8 @@ const Navbar = () => {
     <>
       <div className="navbar">
         <div className="left"> <Link to={'/'} className='navbar_logo'>
-          <FaReact size={40} />
+          <ImHome size={30} />
+          {/* <ImHome size={30} /> */}
         </Link> </div>
         <div className="right"><ul className={`menu ${icon?'active':''}`}>
 

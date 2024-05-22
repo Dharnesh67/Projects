@@ -1,7 +1,15 @@
 .App {
   text-align: center;
+  height: 100%;
+  scrollbar-width:none;
 }
-
+.main-content{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 90%;
+  scrollbar-width:none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,6 +30,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  scrollbar-width:none;
 }
 
 .App-link {
@@ -35,4 +44,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hello{
+  z-index: -1;
+  position: sticky;
 }

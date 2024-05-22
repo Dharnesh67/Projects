@@ -1,0 +1,77 @@
+.maincontainer{
+    height: 100vh;
+    display: flex;
+    padding: 10px 0;
+    scrollbar-width:none;
+}
+.leftcontainer{
+    height: 90%;
+    width: 49%;
+    /* border: 2px solid #ffffff; */
+    margin: 0 5px;
+    overflow-y: scroll;
+    scrollbar-width:none;
+    animation: typingfeffecty 1s cubic-bezier(0.25,-0.1, 0.28, 1.24)  alternate;
+}
+.rightcontainer{
+    height: 90%;
+    width: 49%;
+    /* border-left: 2px dotted #ffffff; */
+    margin: 0 5px;
+    overflow-y: scroll;
+    scrollbar-width:none;
+    animation: typingfeffectx 1s cubic-bezier(0.25,-0.1, 0.28, 1.24)  alternate;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+h1>p{
+    padding: 0 10%;
+    border-bottom: 2px solid var(--llgreen);
+    border-top: 2px solid var(--llgreen);
+    border-radius: 10px;
+}
+.card{
+    background-color: rgba(0, 39, 79, 0.66);
+    color:var(--llgreen);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 180px;
+    width:180px;
+    margin:15px;
+    /* border: 2px solid #ffffff; */
+    border-radius: 100%;
+    /* margin: auto auto 10px auto; */
+    font-size: 2rem;
+    /* overflow: hidden; */
+    /* animation: typing 1s timing-function delay iteration-count direction fill-mode; */
+}
+.card>img{
+    width: 100px;
+}
+@keyframes typingfeffectx {
+    from {
+      transform: translateX(100%);
+    }
+}
+@keyframes typingfeffecty {
+    from {
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}

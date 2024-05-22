@@ -1,0 +1,49 @@
+.contact{
+    position: relative;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    text-decoration: none;
+}
+.card {
+    background-color: rgba(197, 227, 255, 0.849);
+    color:black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 180px;
+    width:180px;
+    margin:15px;
+    border-radius: 100%;
+    font-size: 2rem;
+    cursor:pointer;
+    text-decoration: none;
+}
+.Mail {
+    background-color: rgba(197, 227, 255, 0.849);
+    color:black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 180px;
+    width:85vw;
+    margin:15px;
+    border-radius:20px;
+    font-size: 2rem;
+    cursor:pointer;
+    text-decoration: none;
+}
+.card>img{
+    width: 100px;
+}

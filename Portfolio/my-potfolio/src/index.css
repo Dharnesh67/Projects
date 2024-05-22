@@ -26,6 +26,7 @@ body {
   color: var(--llgreen);
   background-color: var(--dgreen);
   height: 100%;
+  scrollbar-width:none;
 }
 #root {
   height: 100%;

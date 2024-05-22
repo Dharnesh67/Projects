@@ -1,0 +1,92 @@
+.home{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+   overflow:hidden ;
+}
+.home .home__content{
+    position: absolute;
+    
+}
+.home_text{
+    font-size: 30px;
+    font-weight: bold;
+    white-space: wrap;
+}
+.typing{
+    animation: typingfeffect 2s cubic-bezier(0.25,-0.1, 0.28, 1.24)  alternate;
+    overflow: hidden;
+}
+.button{
+    background-color: var(--dlgreen);
+    color: var(--llgreen);
+    /* border: none; */
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius:10px;
+    font-weight: 900;
+}
+.button:hover{
+    background-color: var(--llgreen);
+    color: var(--dgreen);
+}
+.button:active{
+    background-color: var(--dgreen);
+    color: var(--llgreen);
+}
+.buttonan{
+    animation: buttonan 3s linear alternate;
+}
+@keyframes buttonan {
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .home_text{
+        font-size: 15px;
+    }
+    .button{
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width : 550px) and (max-width: 700px) {
+    .home_text{
+        font-size: 18px;
+    }
+    .button{
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width : 800px) and (max-width: 900px) {
+    .home_text{
+        font-size: 22px;
+    }
+    .button{
+        padding: 15px 40px;
+        font-size: 22px;
+    }
+}
+
+@keyframes typingfeffect {
+    from {
+        width: 0;
+        /* opacity: 0; */
+    }
+    to {
+        width: 100%;
+        /* opacity: 1; */
+    }
+}
