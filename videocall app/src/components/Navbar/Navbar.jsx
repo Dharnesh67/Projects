@@ -18,16 +18,16 @@ const Navbar = () => {
     }, []);
     const date = currentDate.toLocaleDateString();
     return (
-        <div className='h-[6vh] flex border-b-2 shadow-lg shadow-sky-200  w-screen justify-between items-center p-4'>
-            <div className="left text-5xl  md:text-6xl text-sky-600 mx-5"><IoMdVideocam /></div>
+        <div className='h-[6vh] flex shadow-lg shadow-slate-400  w-screen justify-between items-center p-4 bg-teal-400 absolute z-40' >
+            <div className="left text-5xl  md:text-6xl text-slate-900 mx-5 cursor-pointer"><IoMdVideocam /></div>
             <div className="right ">
 
-                <div className="icons flex gap-5">
-                    <div className="timedate flex gap-3"> <div className="time text-slate-500 text-sm md:text-lg">{timestamp}</div>
-                        <div className="date text-slate-500 text-sm md:text-lg">{date}</div></div>
-                    <MdOutlineMessage className='md:text-3xl text-xl' />
-                    < IoMdSettings className='md:text-3xl text-xl' />
-                    <FaUser className='md:text-3xl text-xl' />
+                <div className="icons flex gap-5 text-slate-900  ">
+                    <div className="timedate flex gap-3 text-slate-900 "> <div className="time  font-bold  text-sm md:text-lg">{timestamp}</div>
+                        <div className="date font-bold   text-sm md:text-lg">{date}</div></div>
+                    <MdOutlineMessage className='md:text-3xl text-xl cursor-pointer' />
+                    < IoMdSettings className='md:text-3xl text-xl cursor-pointer' />
+                    <FaUser className='md:text-3xl text-xl cursor-pointer' />
                 </div>
             </div>
         </div>
