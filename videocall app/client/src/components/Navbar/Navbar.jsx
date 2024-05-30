@@ -18,7 +18,7 @@ const Navbar = () => {
     }, []);
     const date = currentDate.toLocaleDateString();
     return (
-        <div className='h-[6vh] flex shadow-lg shadow-slate-400  w-screen justify-between items-center p-4 bg-teal-400 absolute z-40' >
+        <div className='h-[6vh] flex shadow-lg shadow-slate-400  w-screen justify-between items-center p-4 bg-blue-500 absolute z-40' >
             <div className="left text-5xl  md:text-6xl text-slate-900 mx-5 cursor-pointer"><IoMdVideocam /></div>
             <div className="right ">
 
