@@ -3,6 +3,7 @@ import { IoMdVideocam } from "react-icons/io";
 import { IoMdSettings } from "react-icons/io";
 import { MdOutlineMessage } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
+
 const Navbar = () => {
     const currentDate = new Date();
     const [timestamp, setTimestamp] = React.useState(currentDate.toLocaleTimeString());
@@ -16,6 +17,7 @@ const Navbar = () => {
             clearInterval(interval);
         };
     }, []);
+
     const date = currentDate.toLocaleDateString();
     return (
         <div className='h-[6vh] flex shadow-lg shadow-slate-400  w-screen justify-between items-center p-4 bg-blue-500 absolute z-40' >
@@ -25,7 +27,7 @@ const Navbar = () => {
                 <div className="icons flex gap-5 text-slate-900  ">
                     <div className="timedate flex gap-3 text-slate-900 "> <div className="time  font-bold  text-sm md:text-lg">{timestamp}</div>
                         <div className="date font-bold   text-sm md:text-lg">{date}</div></div>
-                    <MdOutlineMessage className='md:text-3xl text-xl cursor-pointer' />
+                    <MdOutlineMessage  className='md:text-3xl text-xl cursor-pointer' />
                     < IoMdSettings className='md:text-3xl text-xl cursor-pointer' />
                     <FaUser className='md:text-3xl text-xl cursor-pointer' />
                 </div>

@@ -7,6 +7,13 @@ import Callpage from './components/Callpage/Callpage'
 import Homepage from './components/Homepage/Homepage'
 import Nomatch from './components/Nomatch/Nomatch'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import global from 'global';
+import { Buffer } from 'buffer';
+// import Callpage from './components/Callpage';
+
+// Polyfill global and Buffer for browser environment
+window.global = window.global || global;
+window.Buffer = window.Buffer || Buffer;
 
 function App() {
   return (
