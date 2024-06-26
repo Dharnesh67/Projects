@@ -1,50 +1,186 @@
+//{ Driver Code Starts
+// Initial Template for C++
+
 #include <bits/stdc++.h>
 using namespace std;
-#define pp pair<int, int>
-class Solution
+
+struct Node
 {
-public:
-    int minCostConnectPoints(vector<vector<int>> &p)
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val)
     {
-        int n = p.size();
-        vector<vector<pair<int, int>>> edges(n);
-        for (int i = 0; i < p.size(); i++)
-        {
-            for (int j = i + 1; j < p.size(); i++)
-            {
-                int cost = (abs(p[i][0] - p[j][0]) + abs(p[i][1] - p[j][1]));
-                edges[i].push_back({j, cost});
-            }
-        }
-        priority_queue<pp, vector<pp>, greater<pp>> pq; // cost,node
-        pq.push({0, 0});
-        vector<bool> vis(n, false);
-        vector<int> dis(n, INT_MAX);
-        int ans = 0;
-        while (!pq.empty())
-        {
-            auto x = pq.top();
-            pq.pop();
-            int node = x.second;
-            if (vis[node])
-            {
-                continue;
-            }
-            vis[node] = 1;
-            ans += x.first;
-            for (auto &neigh : edges[node])
-            {
-                if (!vis[neigh.first] && dis[neigh.first] > neigh.second)
-                {
-                    dis[neigh.first] = neigh.second;
-                    pq.push({neigh.second, neigh.first});
-                }
-            }
-        }
-        return ans;
+        data = val;
+        left = right = NULL;
     }
 };
 
+Node *buildTree(string str)
+{
+    // Corner Case
+    if (str.length() == 0 || str[0] == 'N')
+        return NULL;
+
+    // Creating vector of strings from input
+    // string after spliting by space
+    vector<string> ip;
+
+    istringstream iss(str);
+    for (string str; iss >> str;)
+        ip.push_back(str);
+
+    // Create the root of the tree
+    Node *root = new Node(stoi(ip[0]));
+
+    // Push the root to the queue
+    queue<Node *> queue;
+    queue.push(root);
+
+    // Starting from the second element
+    int i = 1;
+    while (!queue.empty() && i < ip.size())
+    {
+
+        // Get and remove the front of the queue
+        Node *currNode = queue.front();
+        queue.pop();
+
+        // Get the current Node's value from the string
+        string currVal = ip[i];
+
+        // If the left child is not null
+        if (currVal != "N")
+        {
+
+            // Create the left child for the current Node
+            currNode->left = new Node(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->left);
+        }
+
+        // For the right child
+        i++;
+        if (i >= ip.size())
+            break;
+        currVal = ip[i];
+
+        // If the right child is not null
+        if (currVal != "N")
+        {
+
+            // Create the right child for the current Node
+            currNode->right = new Node(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+// } Driver Code Ends
+// User function Template for C++
+
+/*
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+*/
+class Solution
+{
+public:
+    map<Node *, Node *> mp;
+    Node *start = NULL;
+    void f(Node *root, int target)
+    {
+        if (!root)
+        {
+            return;
+        }
+        if (root->data == target)
+        {
+            start = root;
+        }
+        if (root->left)
+        {
+            mp[root->left] = root;
+            f(root->left, target);
+        }
+        if (root->left)
+        {
+            mp[root->right] = root;
+            f(root->right, target);
+        }
+    }
+    int minTime(Node *root, int target)
+    {
+        set<Node *> s; // visited set
+        queue<Node *> q;
+        int time = 0;
+        q.push(start);
+        s.insert(start);
+        while (!q.empty())
+        {
+            int size = q.size();
+            while (size--)
+            {
+                Node *f = q.front();
+                q.pop();
+                s.insert(f);
+                if (!s.count(f->left) && f->left)
+                {
+                    q.push(f->left);
+                }
+                if (!s.count(f->right) && f->right)
+                {
+                    q.push(f->right);
+                }
+                if (!s.count(mp[f]) && mp[f])
+                {
+                    q.push(mp[f]);
+                }
+            }
+            time++;
+        }
+        return time;
+    }
+};
+
+//{ Driver Code Starts.
+
 int main()
 {
+    int tc;
+    scanf("%d ", &tc);
+    while (tc--)
+    {
+        string treeString;
+        getline(cin, treeString);
+        // cout<<treeString<<"\n";
+        int target;
+        cin >> target;
+        // cout<<target<<"\n";
+
+        Node *root = buildTree(treeString);
+        Solution obj;
+        cout << obj.minTime(root, target) << "\n";
+
+        cin.ignore();
+    }
+
+    return 0;
 }
+
+// } Driver Code Ends

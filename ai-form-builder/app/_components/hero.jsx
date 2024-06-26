@@ -20,7 +20,7 @@ const hero = () => {
                 className="block w-full rounded px-12 py-3 text-sm font-medium shadow bg-primary text-white focus:outline-none focus:ring active:text-red-500 sm:w-auto"
                 href="#"
                 >
-                Get Started
+                Create Form
               </a>
               <a
                 className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:bg-primary hover:text-white focus:outline-none focus:ring active:text-red-500 sm:w-auto"
