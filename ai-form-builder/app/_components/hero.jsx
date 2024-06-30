@@ -18,7 +18,7 @@ const hero = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
                 className="block w-full rounded px-12 py-3 text-sm font-medium shadow bg-primary text-white focus:outline-none focus:ring active:text-red-500 sm:w-auto"
-                href="#"
+                href="/dashboard"
                 >
                 Create Form
               </a>

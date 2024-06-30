@@ -2,6 +2,10 @@
 
 This project is an AI-based form building platform with integrated payment gateways, built using Next.js and Tailwind CSS.
 
+
+
+## App Model ON Eraser
+- (app.eraser.io/workspace/lgg3ndwiZhLhZAyLKNPX)
 ## Getting Started
 
 First, run the development server:
@@ -26,6 +30,14 @@ Auth form and Hero section is inspired from hyper ui
 
 
 
+
+
+## We Are USing Google Gemini Api
+- (https://developers.google.com/gemini)
+```bash
+npm install @google/generative-ai
+```
+
 ## For The Database We Are USing Postgre SQL On Drizzle
 -(https://orm.drizzle.team/docs/get-started-postgresql) >NEON (https://neon.tech/)
 -
@@ -37,12 +49,7 @@ npm i drizzle-orm @neondatabase/serverless
 npm i -D drizzle-kit
 ```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![alt text](image-2.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
----
-
-This is a SaaS platform designed to build creative forms with integrated payment gateways, utilizing the power of Tailwind CSS and Next.js.
+![alt text](image.png)

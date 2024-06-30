@@ -1,186 +1,51 @@
-//{ Driver Code Starts
-// Initial Template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
-
-struct Node
+#define ll long long
+#define f(i, s, e) for (long long int i = s; i < e; i++)
+bool check(ll mid, ll m, vector<ll> &v)
 {
-    int data;
-    Node *left;
-    Node *right;
-
-    Node(int val)
+    ll lines = 1;
+    ll width = 0;
+    f(i, 0, v.size())
     {
-        data = val;
-        left = right = NULL;
-    }
-};
-
-Node *buildTree(string str)
-{
-    // Corner Case
-    if (str.length() == 0 || str[0] == 'N')
-        return NULL;
-
-    // Creating vector of strings from input
-    // string after spliting by space
-    vector<string> ip;
-
-    istringstream iss(str);
-    for (string str; iss >> str;)
-        ip.push_back(str);
-
-    // Create the root of the tree
-    Node *root = new Node(stoi(ip[0]));
-
-    // Push the root to the queue
-    queue<Node *> queue;
-    queue.push(root);
-
-    // Starting from the second element
-    int i = 1;
-    while (!queue.empty() && i < ip.size())
-    {
-
-        // Get and remove the front of the queue
-        Node *currNode = queue.front();
-        queue.pop();
-
-        // Get the current Node's value from the string
-        string currVal = ip[i];
-
-        // If the left child is not null
-        if (currVal != "N")
+        if ((width + v[i] + (width > 0 ? 1 : 0)) > mid)
         {
-
-            // Create the left child for the current Node
-            currNode->left = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->left);
+            lines++;
+            width = v[i];
         }
-
-        // For the right child
-        i++;
-        if (i >= ip.size())
-            break;
-        currVal = ip[i];
-
-        // If the right child is not null
-        if (currVal != "N")
+        else
         {
-
-            // Create the right child for the current Node
-            currNode->right = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->right);
+            width += (v[i] + (width > 0 ? 1 : 0));
         }
-        i++;
     }
-
-    return root;
+    return (lines <= m);
 }
-
-// } Driver Code Ends
-// User function Template for C++
-
-/*
-struct Node {
-    int data;
-    Node *left;
-    Node *right;
-
-    Node(int val) {
-        data = val;
-        left = right = NULL;
-    }
-};
-*/
-class Solution
-{
-public:
-    map<Node *, Node *> mp;
-    Node *start = NULL;
-    void f(Node *root, int target)
-    {
-        if (!root)
-        {
-            return;
-        }
-        if (root->data == target)
-        {
-            start = root;
-        }
-        if (root->left)
-        {
-            mp[root->left] = root;
-            f(root->left, target);
-        }
-        if (root->left)
-        {
-            mp[root->right] = root;
-            f(root->right, target);
-        }
-    }
-    int minTime(Node *root, int target)
-    {
-        set<Node *> s; // visited set
-        queue<Node *> q;
-        int time = 0;
-        q.push(start);
-        s.insert(start);
-        while (!q.empty())
-        {
-            int size = q.size();
-            while (size--)
-            {
-                Node *f = q.front();
-                q.pop();
-                s.insert(f);
-                if (!s.count(f->left) && f->left)
-                {
-                    q.push(f->left);
-                }
-                if (!s.count(f->right) && f->right)
-                {
-                    q.push(f->right);
-                }
-                if (!s.count(mp[f]) && mp[f])
-                {
-                    q.push(mp[f]);
-                }
-            }
-            time++;
-        }
-        return time;
-    }
-};
-
-//{ Driver Code Starts.
-
 int main()
 {
-    int tc;
-    scanf("%d ", &tc);
-    while (tc--)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n, m;
+    cin >> n >> m;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++)
     {
-        string treeString;
-        getline(cin, treeString);
-        // cout<<treeString<<"\n";
-        int target;
-        cin >> target;
-        // cout<<target<<"\n";
-
-        Node *root = buildTree(treeString);
-        Solution obj;
-        cout << obj.minTime(root, target) << "\n";
-
-        cin.ignore();
+        cin >> v[i];
     }
-
-    return 0;
+    ll sum = accumulate(begin(v), end(v), 0LL);
+    ll i = 1;
+    ll j = sum + n - 1;
+    while (i < j)
+    {
+        ll mid = i + (j - i) / 2;
+        if (check(mid, m, v))
+        {
+            j = mid;
+        }
+        else
+        {
+            i = mid + 1;
+        }
+    }
+    cout << i << endl;
 }
-
-// } Driver Code Ends
