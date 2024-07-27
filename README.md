@@ -1,62 +1,49 @@
+Here's the updated README content, incorporating the project details you provided:
+
+---
+
 # My Projects
 
 Welcome to the repository containing all my projects! This collection showcases a diverse range of my work, including personal projects, professional projects, and academic projects. Each project is organized into its own directory and includes detailed documentation to help you understand and use it.
 
 ## Table of Contents
 
-1. [Project 1: Portfolio](#project-1)
-2. [Project 2: TodoApp](#project-2)
-3. [Project 3: Urlshortner](#project-3)
-4. [Project 4: Urlshortner](#project-3)
-4. [Contributing](#contributing)
-5. [License](#license)
+1. [AI Form Builder](#ai-form-builder)
+2. [Personal Portfolio](#personal-portfolio)
+3. [Todoist](#todoist)
+4. [Hospital Management System](#hospital-management-system)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ## Projects
 
-### Project 1: Name or Description
-[Link to Project 1 Directory](./project1)
+### AI Form Builder
+**Technologies:** Next.js, Tailwind CSS, AI Integration, Payment Gateway
 
-**Description:**
-- Brief description of Project 1, including its purpose and main features.
-- Mention any significant technologies or frameworks used.
+- Developed a SaaS platform for building forms with customizable backgrounds and themes, ensuring responsiveness across all devices.
+- Utilized the Gemini AI API for form generation, offering customizable templates and a user-friendly interface.
+- Integrated a secure payment gateway to enhance user experience and ensure secure transactions.
 
-**Installation:**
-- Step-by-step guide to install and run Project 1.
+### Personal Portfolio
+**Technologies:** React JS
 
-**Usage:**
-- Instructions and examples on how to use Project 1.
+- Created a professional portfolio website using React JS to showcase skills and projects.
+- Implemented interactive features with TsParticles for dynamic backgrounds.
+- Ensured responsiveness across various devices for an optimal user experience.
 
----
+### Todoist
+**Technologies:** React JS, Tailwind CSS
 
-### Project 2: Name or Description
-[Link to Project 2 Directory](./project2)
+- Developed a responsive task management app using React.js, optimized for usability across all devices.
+- Included essential features such as task creation, deletion, and completion tracking.
+- Designed to enhance user efficiency and streamline task management.
 
-**Description:**
-- Brief description of Project 2, including its purpose and main features.
-- Mention any significant technologies or frameworks used.
+### Hospital Management System
+**Technologies:** DBMS
 
-**Installation:**
-- Step-by-step guide to install and run Project 2.
-
-**Usage:**
-- Instructions and examples on how to use Project 2.
-
----
-
-### Project 3: Name or Description
-[Link to Project 3 Directory](./project3)
-
-**Description:**
-- Brief description of Project 3, including its purpose and main features.
-- Mention any significant technologies or frameworks used.
-
-**Installation:**
-- Step-by-step guide to install and run Project 3.
-
-**Usage:**
-- Instructions and examples on how to use Project 3.
-
----
+- Built a Hospital Management System with role-based access controls and a comprehensive admin dashboard.
+- Included a patient section to improve management and doctor recruitment.
+- Connected to a MySQL Server using Apache for robust data handling and reliable performance.
 
 ## Contributing
 
@@ -79,3 +66,7 @@ Each project in this repository may have its own license specified in its respec
 Feel free to explore, use, and contribute to the projects. If you have any questions, suggestions, or issues, please open an issue in this repository.
 
 Happy coding!
+
+---
+
+I'll update your README file with this content.
