@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button } from '@components/ui/button'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 const hero = () => {
   return (
     <div>
       <section className="shadow-md">
-        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center ">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Ai Powered Form Builder 
@@ -24,7 +25,7 @@ const hero = () => {
               </a>
               <a
                 className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:bg-primary hover:text-white focus:outline-none focus:ring active:text-red-500 sm:w-auto"
-                href="#"
+                href="https://github.com/Dharnesh67/Projects/tree/main/ai-form-builder"
               >
                 Learn More
               </a>

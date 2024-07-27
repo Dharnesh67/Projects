@@ -1,51 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define f(i, s, e) for (long long int i = s; i < e; i++)
-bool check(ll mid, ll m, vector<ll> &v)
-{
-    ll lines = 1;
-    ll width = 0;
-    f(i, 0, v.size())
-    {
-        if ((width + v[i] + (width > 0 ? 1 : 0)) > mid)
-        {
-            lines++;
-            width = v[i];
+
+set<pair<int, int>> vis;
+
+int f(int i, int j, int south, int col, string s, string &ans, int &len) {
+    if (i == 0 && j == 0) {
+        if (s.length() < len) {
+            ans = s;
+            len = s.length();
         }
-        else
-        {
-            width += (v[i] + (width > 0 ? 1 : 0));
-        }
+        return s.length();
     }
-    return (lines <= m);
+    if (i > south || abs(j) > col || vis.count({i, j})) {
+        return INT_MAX;
+    }
+    vis.insert({i, j});
+    int res = 1 + min({
+        f(i + 1, j, south, col, s + 'S', ans, len),
+        f(i, j - 1, south, col, s + 'W', ans, len),
+        f(i, j + 1, south, col, s + 'E', ans, len)
+    });
+    vis.erase({i, j});
+    return res;
 }
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    ll n, m;
-    cin >> n >> m;
-    vector<ll> v(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> v[i];
-    }
-    ll sum = accumulate(begin(v), end(v), 0LL);
-    ll i = 1;
-    ll j = sum + n - 1;
-    while (i < j)
-    {
-        ll mid = i + (j - i) / 2;
-        if (check(mid, m, v))
-        {
-            j = mid;
-        }
-        else
-        {
-            i = mid + 1;
+
+string solution(string &forth) {
+    int i = 0, j = 0;
+    int south = 0, east = 0, west = 0;
+    for (char c : forth) {
+        vis.insert({i, j});
+        if (c == 'N') {
+            i--;
+            south++;
+        } else if (c == 'E') {
+            j++;
+            east++;
+        } else if (c == 'W') {
+            j--;
+            west++;
         }
     }
-    cout << i << endl;
+
+    string ans = "";
+    int len = INT_MAX;
+    f(i, j, south, max(east, west), "", ans, len);
+    return ans;
 }

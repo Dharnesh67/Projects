@@ -1,55 +1,72 @@
-# AI-based Form Building with Payment Gateway
+Here's the updated README content, incorporating the project details you provided:
 
-This project is an AI-based form building platform with integrated payment gateways, built using Next.js and Tailwind CSS.
+---
 
+# My Projects
 
+Welcome to the repository containing all my projects! This collection showcases a diverse range of my work, including personal projects, professional projects, and academic projects. Each project is organized into its own directory and includes detailed documentation to help you understand and use it.
 
-## App Model ON Eraser
-- (app.eraser.io/workspace/lgg3ndwiZhLhZAyLKNPX)
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+1. [AI Form Builder](#ai-form-builder)
+2. [Personal Portfolio](#personal-portfolio)
+3. [Todoist](#todoist)
+4. [Hospital Management System](#hospital-management-system)
+5. [Contributing](#contributing)
+6. [License](#license)
 
-```bash
-npx create-next-app@latest init
-# or
-npx shadcn-ui@latest init 
-# or
-npm install
-# or
-npm run dev
-```
+## Projects
 
-Auth form and Hero section is inspired from hyper ui
+### AI Form Builder
+**Technologies:** Next.js, Tailwind CSS, AI Integration, Payment Gateway
 
-## UI Components
-- [shadcn UI Components](https://ui.shadcn.com/)
--[DaisyUi](https://daisyui.com/)
-- hero page is from HyperUI (https://hyperui.dev/)
--icons is from Lucideicons (https://lucide.dev/)
+- Developed a SaaS platform for building forms with customizable backgrounds and themes, ensuring responsiveness across all devices.
+- Utilized the Gemini AI API for form generation, offering customizable templates and a user-friendly interface.
+- Integrated a secure payment gateway to enhance user experience and ensure secure transactions.
 
+### Personal Portfolio
+**Technologies:** React JS
 
+- Created a professional portfolio website using React JS to showcase skills and projects.
+- Implemented interactive features with TsParticles for dynamic backgrounds.
+- Ensured responsiveness across various devices for an optimal user experience.
 
+### Todoist
+**Technologies:** React JS, Tailwind CSS
 
+- Developed a responsive task management app using React.js, optimized for usability across all devices.
+- Included essential features such as task creation, deletion, and completion tracking.
+- Designed to enhance user efficiency and streamline task management.
 
-## We Are USing Google Gemini Api
-- (https://developers.google.com/gemini)
-```bash
-npm install @google/generative-ai
-```
+### Hospital Management System
+**Technologies:** DBMS
 
-## For The Database We Are USing Postgre SQL On Drizzle
--(https://orm.drizzle.team/docs/get-started-postgresql) >NEON (https://neon.tech/)
--
-- Its is an open source database management system that utilizes the SQL querying language. It is a powerful, open source object-relational database system that extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
+- Built a Hospital Management System with role-based access controls and a comprehensive admin dashboard.
+- Included a patient section to improve management and doctor recruitment.
+- Connected to a MySQL Server using Apache for robust data handling and reliable performance.
 
-```bash
-step 1
-npm i drizzle-orm @neondatabase/serverless
-npm i -D drizzle-kit
-```
+## Contributing
 
+If you would like to contribute to any of the projects in this repository, please follow these guidelines:
 
-![alt text](image-2.png)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
-![alt text](image.png)
+For more detailed instructions, refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file (if you have one).
+
+## License
+
+Each project in this repository may have its own license specified in its respective directory. If no license is specified, the following default license applies:
+
+[MIT License](./LICENSE)
+
+Feel free to explore, use, and contribute to the projects. If you have any questions, suggestions, or issues, please open an issue in this repository.
+
+Happy coding!
+
+---
+
+I'll update your README file with this content.
