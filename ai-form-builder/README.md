@@ -52,5 +52,3 @@ npm i -D drizzle-kit
 
 
 ![alt text](image-2.png)
-
-![alt text](image.png)
