@@ -1,46 +1,105 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-class Solution
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+/*
+ * Complete the 'stockmax' function below.
+ *
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts INTEGER_ARRAY prices as parameter.
+ */
+int f(int i,vector<int> prices,int count){
+    if(i==prices.size()){
+        return 0;
+    }
+    int buy=f(i+1,prices,count+1)-prices[i];
+    int sell=0;
+    if(count>0){
+        sell=(count*prices[i])+f(i+1,prices,0);
+    }
+
+}
+long stockmax(vector<int> prices) {
+
+}
+
+int main()
 {
-public:
-    static bool compare(pair<double, int> &a, pair<double, int> &b)
-    {
-        return a.first < b.first;
-    }
-    int maxPointsInsideSquare(vector<vector<int>> &points, string s)
-    {
-        unordered_set<char> st;
-        priority_queue<pair<double, int>, vector<pair<double, int>>, decltype(&compare)> pq(compare);
-        for (int i = 0; i < points.size(); i++)
-        {
-            double distance = sqrt(points[i][0] * points[i][0] + points[i][1] * points[i][1]);
-            pq.push({distance, i});
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string t_temp;
+    getline(cin, t_temp);
+
+    int t = stoi(ltrim(rtrim(t_temp)));
+
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        string n_temp;
+        getline(cin, n_temp);
+
+        int n = stoi(ltrim(rtrim(n_temp)));
+
+        string prices_temp_temp;
+        getline(cin, prices_temp_temp);
+
+        vector<string> prices_temp = split(rtrim(prices_temp_temp));
+
+        vector<int> prices(n);
+
+        for (int i = 0; i < n; i++) {
+            int prices_item = stoi(prices_temp[i]);
+
+            prices[i] = prices_item;
         }
-        int count = 0;
-        int maxx = INT_MIN;
-        int maxy = INT_MIN;
-        while (!pq.empty())
-        {
-            auto x = pq.top();
-            pq.pop();
-            maxx = max(points[x.second][0], maxx);
-            maxy = max(points[x.second][1], maxy);
-            if (!st.count(s[x.second]))
-            {
-                st.insert(s[x.second]);
-            }
-            else
-            {
-                for (int i = 0; i < points.size(); i++)
-                {
-                    if (maxx>points[i][0] && maxy>points[i][1] && st.count(s[i])){
-                            count++;
-                    }
-                }
-                break;
-            }
-        }
-        return count;
+
+        long result = stockmax(prices);
+
+        fout << result << "\n";
     }
-};
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
+
+vector<string> split(const string &str) {
+    vector<string> tokens;
+
+    string::size_type start = 0;
+    string::size_type end = 0;
+
+    while ((end = str.find(" ", start)) != string::npos) {
+        tokens.push_back(str.substr(start, end - start));
+
+        start = end + 1;
+    }
+
+    tokens.push_back(str.substr(start));
+
+    return tokens;
+}

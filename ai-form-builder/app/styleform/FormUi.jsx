@@ -15,32 +15,33 @@ import { usePathname } from "next/navigation";
 import userres from "@/configs/schema/";
 import { db } from "@/configs/index";
 import { toast } from "sonner";
+
 const FormUi = ({ formdata, update, deletefield, theme }) => {
   const [data, setdata] = useState();
   const fieldchange = (value, name) => {
     // console.log(value,name)
     setdata({ ...data, [name]: value });
   };
-  let formreference=useRef();
+  let formreference = useRef();
   const onformSubmit = async (e) => {
     e.preventDefault();
     console.log(data);
     try {
-        const result = await db.userres.create({
-            jsonresponse: data,
-            formid: formdata.formid,
-            createdby: "An",
-            createdat: new Date().toISOString(),
-        });
-        if (result) {
-            formreference.reset();
-            toast.success("Form Submitted Successfully");
-        }
+      const result = await db.userres.create({
+        jsonresponse: data,
+        formid: formdata.formid,
+        createdby: "An",
+        createdat: new Date().toISOString(),
+      });
+      if (result) {
+        formreference.reset();
+        toast.success("Form Submitted Successfully");
+      }
     } catch (error) {
-        console.error("Error submitting form:", error);
-        toast.error("Failed to submit form");
+      console.error("Error submitting form:", error);
+      toast.error("Failed to submit form");
     }
-};
+  };
   const path = usePathname();
   return (
     <div className="w-1/2 rounded-xl my-5 shadow-lg shadow-violet-400 " data-theme={theme}>

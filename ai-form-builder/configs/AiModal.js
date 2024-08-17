@@ -1,7 +1,7 @@
 // AiModal.js
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-// Ensure the API key is correctly set up in your environment
-const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY; // Ensure this matches your environment variable setup
+import { GoogleGenerativeAI} from "@google/generative-ai";
+
+const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 if (!apiKey) {
   throw new Error("API key is missing. Please set NEXT_PUBLIC_GEMINI_API_KEY in your environment variables.");
 }
@@ -22,6 +22,5 @@ const generationConfig = {
 
 export const chatSession = model.startChat({
   generationConfig,
-  // safetySettings,
   history: [],
 });

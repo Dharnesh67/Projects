@@ -3,7 +3,6 @@
     height: 9vh;
     display: flex;
     align-items: center;
-    
     justify-content: center;
     position: sticky;
     z-index: 1000;
@@ -24,10 +23,10 @@
     align-items: center;
     width: 50%;
     justify-content: flex-end;
-    margin-right:2%;
+    margin-right: 2%;
 }
 
-.right>ul {
+.right > ul {
     display: flex;
     gap: 40px;
     list-style-type: none;
@@ -37,20 +36,20 @@
     padding-top: 10px;
     padding-bottom: 10px;
     width: auto;
+}
 
-    &::after {
-        content: '';
-        display: block;
-        height: 3px;
-        width: 0;
-        background: transparent;
-        transition: all 0.4s ease;
-    }
+.menu_item::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: all 0.4s ease;
+}
 
-    &:hover::after {
-        width: 100%;
-        background-color: var(--llgreen);
-    }
+.menu_item:hover::after {
+    width: 100%;
+    background-color: var(--llgreen);
 }
 
 .menu_link {
@@ -64,7 +63,6 @@
     display: none;
     cursor: pointer;
     color: var(--llgreen);
-    // margin-bottom: 1px;
     z-index: 1000;
 }
 
@@ -82,31 +80,25 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // border: 1px solid rgb(112, 229, 255);
         border-radius: 10px;
         width: 100%;
         margin-top: 700px;
         position: absolute;
         left: -110%;
-        // z-index: ;
-        opacity:   1;
+        opacity: 1;
         transition: all 0.3s ease-in-out;
         font-size: 1.5em;
-        &.active{
-            left: 0px;
-            // margin-top: 0px;
-            opacity: 1;
-            transition: all 0.3s ease-in-out;
-            background-color: var(--dlgreen);
-            height: 80vh;
-        }
-        
-    }
-    .menu_item{
-        border-bottom: .5px solid var(--lgreen);
     }
 
-    // .right{
-    //     flex-direction: column;
-    // }
+    .menu.active {
+        left: 0px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--dlgreen);
+        height: 80vh;
+    }
+
+    .menu_item {
+        border-bottom: 0.5px solid var(--lgreen);
+    }
 }

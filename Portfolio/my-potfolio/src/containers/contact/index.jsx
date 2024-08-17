@@ -23,13 +23,7 @@ const Contact = () => {
       image: "https://img.icons8.com/?size=100&id=9L16NypUzu38&format=png&color=000000",
       link: "https://leetcode.com/u/Dharmesh004/",
     },
-    // {
-    //     title: "raikwardharmesh67@gmail.com",
-    //     image: "https://img.icons8.com/?size=100&id=PuMBlD0n7QJD&format=png&color=000000",
-    //     // link:""
-    // },
   ];
-  const sendgithub = () => {};
   return (
     <div className="contact">
       <div className="cards">

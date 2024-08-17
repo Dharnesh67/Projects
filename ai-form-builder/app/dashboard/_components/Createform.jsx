@@ -7,7 +7,6 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button'
@@ -24,25 +23,23 @@ const Createform = () => {
     const [loading, setloading] = useState(false)
     const user = useUser();
     const route = useRouter();
-    const prompt = `Please provide a form in JSON format for student registration for ${USERINPUT}. The form should include the formheading, formTitle, formFields, fieldName, placeholder (placeholder should be pleasing and different from fieldName), formLevel(indicating if the field is required or optional), and fieldtypes(Also Efficiently Handle Different Field Type Content Like, text,select etc). The JSON should follow this structure, including all necessary information for a comprehensive registration form.`  // this is our Prompt to fetch data from the AI
+    const prompt = `Please provide a form in JSON format for ${USERINPUT}. The form should include the formheading, formTitle, formFields, fieldName, placeholder (placeholder should be pleasing and different from fieldName), formLevel(indicating if the field is required or optional), and fieldtypes(Also Efficiently Handle Different Field Type Content Like, text,select etc). The JSON should follow this structure, including all necessary information for a comprehensive registration form.`  // this is our Prompt to fetch data from the AI
     const oncreateform = async () => {
         setloading(true)
         const result = await chatSession.sendMessage("Description:" + prompt + USERINPUT);
-        // console.log(result.response.text())
         if (result.response.text()) {
-            setopendialog(false)
-            setloading(false)
-            const resp = await db.insert(Jsonforms).values({
+            const resp = await db.insert(Jsonforms).values({   // table name ==Jsonforms
                 jsonform: result.response.text(),
                 createdby: user.id,
-                createdat: moment().format('DD/MM/YYYY')
+                createdat: moment().format('DD/MM/YYYY'),
+                // background: 
             }).returning({ id: Jsonforms.id });
-
             const userid = resp[0].id;
             if (userid) {
                 route.push(`/styleform/${userid}`)  //redirect to the styleform page
-
+                setloading(false)
             }
+            setopendialog(false)
         }
     }
     return (

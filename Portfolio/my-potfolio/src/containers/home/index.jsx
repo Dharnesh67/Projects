@@ -9,9 +9,9 @@ const Home = () => {
                 <div className="home_text">
                     <h1 className="typing">Hello I Am Dharmesh Raikwar </h1>
                     <br />
-                    <h3 className="typing">National Institute of Technology, Karnataka</h3>
+                    <h3 className="typing">National Institute of Technology, Karnataka (2026)</h3>
                     <h4 className="typing">
-                        Minor In IT | IEEE NITK |Skilled in C++ |Passionate about coding/Development
+                    Pre finalyear student @ Nitk'26| Media Head @IEEE || Designer @P&L NITK | MERN Stack | C++ | Minor IT
                     </h4>
                     <br />
                 </div>

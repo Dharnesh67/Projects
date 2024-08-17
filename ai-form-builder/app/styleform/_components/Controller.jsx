@@ -1,5 +1,4 @@
 "use client"
-import { Button } from "@/components/ui/button";
 import {
     Select,
     SelectContent,
@@ -7,8 +6,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { set } from "mongoose";
-
 import React, { useState } from "react";
 
 const Controller = ({ settheme, setbg }) => {
@@ -127,7 +124,6 @@ const Controller = ({ settheme, setbg }) => {
 
     ];
     const handlechange = (theme) => {
-        console.log(theme);
         settheme(theme);
     };
     const [list, setlist] = useState(themes);

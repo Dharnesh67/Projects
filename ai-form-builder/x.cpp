@@ -1,48 +1,55 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+#define pii pair<int, int>
+#define pll pair<long long, long long>
+#define vi vector<int>
+#define vll vector<long long>
+#define mii map<int, int>
+#define si set<int>
+#define sc set<char>
 
-set<pair<int, int>> vis;
-
-int f(int i, int j, int south, int col, string s, string &ans, int &len) {
-    if (i == 0 && j == 0) {
-        if (s.length() < len) {
-            ans = s;
-            len = s.length();
+#define f(i, s, e) for (long long int i = s; i < e; i++)
+#define cf(i, s, e) for (long long int i = s; i <= e; i++)
+#define rf(i, e, s) for (long long int i = e - 1; i >= s; i--)
+#define pb push_back
+#define eb emplace_back
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n,m,k;
+        cin>>n>>m>>k;
+        unordered_map<int,pair<int,int>> mp;
+        f(i,0,n)
+        {
+            f(j,0,m)
+            {
+                int color=1;
+                while(true)
+                {
+                    if(mp.find(color)==mp.end())
+                    {
+                        mp[color]={i,j};
+                        break;
+                    }else{
+                        int x=mp[color].first;
+                        int y=mp[color].second;
+                        if(max(abs(x-i),abs(y-j))>=k)
+                        {
+                            mp[color]={i,j};
+                            break;
+                        }
+                    }
+                    color++;
+                }
+            }
         }
-        return s.length();
+        cout<<mp.size()<<endl;
     }
-    if (i > south || abs(j) > col || vis.count({i, j})) {
-        return INT_MAX;
-    }
-    vis.insert({i, j});
-    int res = 1 + min({
-        f(i + 1, j, south, col, s + 'S', ans, len),
-        f(i, j - 1, south, col, s + 'W', ans, len),
-        f(i, j + 1, south, col, s + 'E', ans, len)
-    });
-    vis.erase({i, j});
-    return res;
-}
-
-string solution(string &forth) {
-    int i = 0, j = 0;
-    int south = 0, east = 0, west = 0;
-    for (char c : forth) {
-        vis.insert({i, j});
-        if (c == 'N') {
-            i--;
-            south++;
-        } else if (c == 'E') {
-            j++;
-            east++;
-        } else if (c == 'W') {
-            j--;
-            west++;
-        }
-    }
-
-    string ans = "";
-    int len = INT_MAX;
-    f(i, j, south, max(east, west), "", ans, len);
-    return ans;
 }

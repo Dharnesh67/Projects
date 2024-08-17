@@ -23,10 +23,13 @@ npm run dev
 Auth form and Hero section is inspired from hyper ui
 
 ## UI Components
-- [shadcn UI Components](https://ui.shadcn.com/)
+-[shadcn UI Components](https://ui.shadcn.com/)
+
 -[DaisyUi](https://daisyui.com/)
-- hero page is from HyperUI (https://hyperui.dev/)
--icons is from Lucideicons (https://lucide.dev/)
+
+-[hero page is from HyperUI](https://www.hyperui.dev/components/marketing/banners)
+
+-[icons is from Lucide reacticons](https://lucide.dev/)
 
 
 

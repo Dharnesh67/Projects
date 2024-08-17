@@ -12,15 +12,6 @@ const Education = () => {
                 <div className="education">
                     <h1 className="header"><p>Education</p></h1>
                     <VerticalTimeline>
-
-                        {/* <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="Skills: Data Structures and Algorithms · Oracle Database · Database Management System (DBMS)"
-                        iconStyle={{ background: 'rgb(14,45,95)', color: '#fff' }}
-                    >
-                        <h3 className="vertical-timeline-element-title">National Institute of Technology Karnataka</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Minor in Information Technology</h4>
-                    </VerticalTimelineElement> */}
                         {edu.map((item, index) => (
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
