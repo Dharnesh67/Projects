@@ -89,7 +89,7 @@ const FormUi = ({ formdata, update, deletefield, theme }) => {
                       field.options.map((option, index) => (
                         <div className="flex items-center space-x-2" key={index}>
                           <RadioGroupItem value={option} id={`${field.fieldName}-${index}`} />
-                          <Label htmlFor={`${field.fieldName}-${index}`}>{option}</Label>
+                        
                         </div>
                       ))}
                   </RadioGroup>

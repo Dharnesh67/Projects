@@ -12,7 +12,7 @@ function header({ SignInButton }) {
     <div className='h-[8vh] rounded-sm shadow-md '>
       <div className='flex justify-between items-center h-full px-8'>
         <div><Image src="/vercel.svg" alt="Logo" width={60} height={10} /></div>
-        {isSignedIn ? <div className='flex items-center space-x-4'><Button><Link href={'/dashboard'}></Link></Button> < UserButton />   </div> : <Button><SignInButton /></Button>}
+        {isSignedIn ? <div className='flex items-center space-x-4'><Button><Link href={'/dashboard'}>Dashboard</Link></Button> < UserButton />   </div> : <Button><SignInButton /></Button>}
       </div>
     </div>
   )

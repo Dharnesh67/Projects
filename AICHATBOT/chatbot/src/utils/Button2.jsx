@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Button2 = () => {
   return (
     <StyledWrapper>
-      <button className="boton-elegante">Explore</button>
+      <button className="boton-elegante">New Chat</button>
     </StyledWrapper>
   );
 };
