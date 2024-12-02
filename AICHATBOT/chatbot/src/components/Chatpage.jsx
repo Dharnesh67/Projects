@@ -9,6 +9,8 @@ import { chatSession } from "../gemini";
 import Markdown from 'react-markdown'
 import Cube from "./Cube";
 import { Link } from "react-router-dom";
+import {  UserButton } from '@clerk/clerk-react';
+
 const Chatpage = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
@@ -21,7 +23,7 @@ const Chatpage = () => {
   const handleSend = async () => {
     const prompt = "use the previous message to generate a response if it is available or ignore it if it is not available\n";
     const prevmessages = messages.map((message) => message.text).join("\n");
-    const response = await chatSession.sendMessage(input+prompt+'previous message:'+prevmessages);
+    const response = await chatSession.sendMessage(input + prompt + 'previous message:' + prevmessages);
     let message = response.response.text(); // await the text() function
     setMessages([
       ...messages,
@@ -40,7 +42,9 @@ const Chatpage = () => {
       <div className=" h-screen text-white flex absolute w-screen">
         {/* Sidebar */}
         <div className="sidebar border-r border-gray-500 h-full md:w-1/3 sm:w-1/2 lg:w-1/4">
+        
           <div className="upperside h-full ">
+              
             <Link to={`/`}> <div className="uppersidetop flex justify-around items-center pt-2 ">
               <img src="openai.png" alt="OpenAI logo" className="invert" width={45} />
               <p className="lg:text-5xl md:text-4xl">CHATBOT</p>
@@ -69,17 +73,21 @@ const Chatpage = () => {
                 </div>
               </div>
               <div className="lowerside border-t-2 p-2 text-xl">
-                <div className="item flex items-center gap-5 m-3 cursor-pointer">
-                  <IoHome />
-                  <div>Home</div>
-                </div>
+                <Link to={`/`}>
+                  <div className="item flex items-center gap-5 m-3 cursor-pointer">
+                    <IoHome />
+                    <div>Home</div>
+                  </div>
+                </Link>
                 <div className="item flex items-center gap-5 m-3 cursor-pointer">
                   <CiSaveDown2 />
                   <div>Saved</div>
                 </div>
                 <div className="item flex items-center gap-5 m-3 cursor-pointer">
                   <GiUpgrade />
-                  <div>Upgrade Now</div>
+                 <Link to={`https://buy.stripe.com/test_00g00qa149pq9byfYZ`}>
+                 <div>Upgrade Now</div>
+                 </Link>
                 </div>
               </div>
             </div>
@@ -87,7 +95,10 @@ const Chatpage = () => {
         </div>
 
         {/* Chatbox */}
-        <div className="right h-full w-full p-5 flex flex-col items-center">
+        <div className="right h-full w-full  flex flex-col items-center">
+          <div className="border border-white w-full p-2 mb-1">
+          <UserButton />
+          </div>
           <div className="chatbox h-full flex flex-col gap-2 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800 font-extrabold">
             {messages.map((message, index) => {
               if (!message.isbot) {

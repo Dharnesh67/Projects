@@ -2,6 +2,8 @@ import React from 'react';
 import Robo from './robo';
 import sidelogo from '../assets/sidelogo.svg'; // Make sure the path to your logo is correct
 import Button from './Button';
+import { SignInButton, SignedOut, SignedIn, UserButton } from '@clerk/clerk-react';
+import Button1 from '../utils/Button1';
 const Home = () => {
     return (
         <div className='h-screen'>
@@ -9,7 +11,15 @@ const Home = () => {
                 <div>
                     <img src={sidelogo} alt="Logo" className="h-8 w-auto" />
                 </div>
-                <Button />
+                <SignedIn>
+                    <Button />
+                    <UserButton />
+                </SignedIn>
+                <SignedOut>
+                    <div className='bg-slate-700 px-10 py-3 rounded-full'>
+                        <SignInButton />
+                    </div>
+                </SignedOut>
             </header>
             <Robo />
         </div>
