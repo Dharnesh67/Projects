@@ -1,6 +1,3 @@
-Here's the updated README content, incorporating the project details you provided:
-
----
 
 # My Projects
 
