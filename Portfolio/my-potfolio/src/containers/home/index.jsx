@@ -7,18 +7,27 @@ const Home = () => {
         <>
             <div className="home">
                 <div className="home_text">
-                    <h1 className="typing">Hello I Am Dharmesh Raikwar </h1>
+                    <h1 className="typing">
+                        <span className="wave-emoji">👋</span> Hey, I'm <span className="highlight">Dharmesh Raikwar</span>
+                    </h1>
                     <br />
-                    <h3 className="typing">National Institute of Technology, Karnataka (2026)</h3>
-                    <h4 className="typing">
-                    Pre finalyear student @ Nitk'26| Media Head @IEEE || Designer @P&L NITK | MERN Stack | C++ | Minor IT
+                    <h3 className="sub-heading typing">Aspiring Innovator @ NIT Karnataka (Class of 2026)</h3>
+                    <h4 className="description typing">
+                        🚀 Pre-final Year | Media Head @IEEE NITK 🎥 | Creative Designer @P&L NITK 🎨 <br />
+                        Full-Stack Developer (MERN) | C++ Wizard | IT Enthusiast 🖥️
                     </h4>
                     <br />
+                    <p className="tagline typing">
+                        Building dynamic web experiences and bringing creative ideas to life!
+                    </p>
                 </div>
-                <button className="buttonan" > <Link to='/contact' className="button">
-                    Contact Me
-                </Link></button>
+                <button className="cta-button">
+                    <Link to="/contact" className="button-link">
+                        🌐 Explore My Links
+                    </Link>
+                </button>
             </div>
+
         </>
     );
 }
