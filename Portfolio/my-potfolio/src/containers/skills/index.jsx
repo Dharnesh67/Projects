@@ -13,7 +13,23 @@ import Express from './pngegg.png';
 
 const Skills = () => {
     const Frontend = [
+
         {
+            title: "React",
+            image: reactImage
+        },
+        {
+            title: "Tailwind CSS",
+            image: tailwind
+        },
+        {
+            title: "Bootstrap",
+            image: "https://img.icons8.com/color/452/bootstrap.png"
+        }, {
+            //next js
+            title: "Next.js",
+            image: "https://cdn.brandfetch.io/id2alue-rx/w/400/h/400/theme/dark/icon.jpeg?c=1bx1735762820077id64Mup7ac-9WdRmoy&t=1714556222178"
+        }, {
             title: "HTML",
             image: htmlImage
         },
@@ -25,16 +41,9 @@ const Skills = () => {
             title: "JavaScript",
             image: jsImage
         },
-        {
-            title: "React",
-            image: reactImage
-        },
-        {
-            title: "Tailwind CSS",
-            image: tailwind
-        },
+
     ]
-    const Backend=[
+    const Backend = [
         {
             title: "C++ /  DSA",
             image: cppImage

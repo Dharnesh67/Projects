@@ -7,7 +7,6 @@
 .leftcontainer{
     height: 90%;
     width: 49%;
-    /* border: 2px solid #ffffff; */
     margin: 0 5px;
     overflow-y: scroll;
     scrollbar-width:none;
@@ -16,7 +15,6 @@
 .rightcontainer{
     height: 90%;
     width: 49%;
-    /* border-left: 2px dotted #ffffff; */
     margin: 0 5px;
     overflow-y: scroll;
     scrollbar-width:none;
@@ -52,12 +50,8 @@ h1>p{
     height: 180px;
     width:180px;
     margin:15px;
-    /* border: 2px solid #ffffff; */
     border-radius: 100%;
-    /* margin: auto auto 10px auto; */
     font-size: 2rem;
-    /* overflow: hidden; */
-    /* animation: typing 1s timing-function delay iteration-count direction fill-mode; */
 }
 .card>img{
     width: 100px;
